@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define LSIZ 128 
-#define RSIZ 10
 
 int main()
 {
     FILE * file, *file2;
-    char line[RSIZ][LSIZ];
-    char path[100] = "C:\\Users\\ksaik\\Desktop\\Python codes\\Zen_Group\\words.txt";
+    char path[100] = "words.txt";
     char ch;
     int characters, words, lines;
     file = fopen(path, "r");
@@ -31,15 +28,12 @@ int main()
             lines++;
         if (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\0')
             words++;
-        if (ch != '\n')
-            capsWord[i] += ch;
     }
     if (characters > 0)
     {
         words++;
         lines++;
     }
-
     printf("\n");
     printf("Total characters = %d\n", characters);
     printf("Total words      = %d\n", words);
